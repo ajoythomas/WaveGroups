@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wave Groups - Next.js + Cloudflare Migration
 
-## Getting Started
+This project rebuilds [wavegroups.com](https://www.wavegroups.com/) as a static-first Next.js site with Cloudflare-compatible form APIs.
 
-First, run the development server:
+## Tech Stack
+
+- Next.js App Router + TypeScript
+- Cloudflare Pages hosting
+- Next.js API routes for form handling
+- Cloudflare Turnstile verification
+- Cloudflare R2 signed uploads for resumes
+- Transactional email via API (Resend-compatible endpoint)
+
+## Routes Included
+
+- `/`
+- `/about-wave`
+- `/services`
+- `/service-item/[slug]`
+- `/projects`
+- `/portfolio-item/[slug]`
+- `/careers`
+- `/career-item/[slug]`
+- `/contact-us`
+
+Legacy redirects are configured in `next.config.ts`.
+
+## API Endpoints
+
+- `POST /api/contact`
+- `POST /api/careers/upload-url`
+- `POST /api/careers/apply`
+
+## Environment Variables
+
+Create `.env.local` and configure:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_SITE_URL=https://www.wavegroups.com
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=
+TURNSTILE_SECRET_KEY=
+
+EMAIL_API_KEY=
+FROM_EMAIL=
+CONTACT_TO_EMAIL=
+CAREERS_TO_EMAIL=
+
+R2_BUCKET=
+R2_ACCESS_KEY_ID=
+R2_SECRET_ACCESS_KEY=
+R2_ENDPOINT=
+R2_PUBLIC_BASE_URL=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`R2_ENDPOINT` format example:
+`https://<account-id>.r2.cloudflarestorage.com`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Local Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+## Deploy to Cloudflare Pages
 
-To learn more about Next.js, take a look at the following resources:
+1. Push this repo to GitHub.
+2. Create a Cloudflare Pages project and connect the repo.
+3. Use build command: `npm run build`
+4. Use the **Next.js framework preset** in Pages (do not set a custom static output directory).
+5. Add all required environment variables.
+6. Add custom domain `www.wavegroups.com`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If your Pages setup expects a Next.js preset, select **Next.js** framework preset.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Careers application uploads resume files to R2 via signed URL.
+- Resume files are referenced in email by URL/path (not attached binary files).
+- Turnstile is optional locally, enforced when `TURNSTILE_SECRET_KEY` is set.
