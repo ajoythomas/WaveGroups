@@ -71,6 +71,11 @@ npm run dev
 5. Add all required environment variables.
 6. Add custom domain `www.wavegroups.com`.
 
+Important:
+- Do **not** use `npx @cloudflare/next-on-pages@1` as the build command for this project.
+- `next-on-pages@1` is deprecated and does not support Next.js 16 prerender output.
+- If this command is currently configured in Pages, replace it with `npm run build`.
+
 If your Pages setup expects a Next.js preset, select **Next.js** framework preset.
 
 ## Notes
