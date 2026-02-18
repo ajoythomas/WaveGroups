@@ -1,0 +1,19 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about-wave/page": "app/about-wave/page.js",
+  "/api/careers/apply/route": "app/api/careers/apply/route.js",
+  "/api/careers/upload-url/route": "app/api/careers/upload-url/route.js",
+  "/api/contact/route": "app/api/contact/route.js",
+  "/career-item/[slug]/page": "app/career-item/[slug]/page.js",
+  "/careers/page": "app/careers/page.js",
+  "/contact-us/page": "app/contact-us/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/portfolio-item/[slug]/page": "app/portfolio-item/[slug]/page.js",
+  "/projects/page": "app/projects/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/service-item/[slug]/page": "app/service-item/[slug]/page.js",
+  "/services/page": "app/services/page.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js"
+}

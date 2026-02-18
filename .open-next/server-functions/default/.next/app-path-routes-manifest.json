@@ -1,0 +1,19 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about-wave/page": "/about-wave",
+  "/api/careers/apply/route": "/api/careers/apply",
+  "/api/careers/upload-url/route": "/api/careers/upload-url",
+  "/api/contact/route": "/api/contact",
+  "/career-item/[slug]/page": "/career-item/[slug]",
+  "/careers/page": "/careers",
+  "/contact-us/page": "/contact-us",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/portfolio-item/[slug]/page": "/portfolio-item/[slug]",
+  "/projects/page": "/projects",
+  "/robots.txt/route": "/robots.txt",
+  "/service-item/[slug]/page": "/service-item/[slug]",
+  "/services/page": "/services",
+  "/sitemap.xml/route": "/sitemap.xml"
+}

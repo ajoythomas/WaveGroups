@@ -6,6 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "pages:build": "next build",
+    "cf:build": "opennextjs-cloudflare build",
+    "cf:preview": "opennextjs-cloudflare build && wrangler dev",
+    "cf:deploy": "opennextjs-cloudflare build && wrangler deploy",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
@@ -14,6 +17,7 @@
     "@aws-sdk/client-s3": "^3.888.0",
     "@aws-sdk/lib-storage": "^3.888.0",
     "@aws-sdk/s3-request-presigner": "^3.888.0",
+    "@opennextjs/cloudflare": "^1.16.5",
     "next": "16.1.6",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",

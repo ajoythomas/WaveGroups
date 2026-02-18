@@ -1,0 +1,207 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    },
+    {
+      "source": "/client-login",
+      "destination": "/contact-us",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/client-login(?:/)?$"
+    },
+    {
+      "source": "/client-login/",
+      "destination": "/contact-us",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/client-login/(?:/)?$"
+    },
+    {
+      "source": "/team",
+      "destination": "/about-wave",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/team(?:/)?$"
+    },
+    {
+      "source": "/team/",
+      "destination": "/about-wave",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/team/(?:/)?$"
+    },
+    {
+      "source": "/faqs",
+      "destination": "/contact-us",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/faqs(?:/)?$"
+    },
+    {
+      "source": "/faqs/",
+      "destination": "/contact-us",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/faqs/(?:/)?$"
+    },
+    {
+      "source": "/portfolio-2-col",
+      "destination": "/projects",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/portfolio-2-col(?:/)?$"
+    },
+    {
+      "source": "/portfolio-2-col/",
+      "destination": "/projects",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/portfolio-2-col/(?:/)?$"
+    },
+    {
+      "source": "/enh_portfolio_tax/:path*",
+      "destination": "/projects",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/enh_portfolio_tax(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/career-item/[slug]",
+      "regex": "^/career\\-item/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/career\\-item/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/portfolio-item/[slug]",
+      "regex": "^/portfolio\\-item/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/portfolio\\-item/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/service-item/[slug]",
+      "regex": "^/service\\-item/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/service\\-item/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about-wave",
+      "regex": "^/about\\-wave(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about\\-wave(?:/)?$"
+    },
+    {
+      "page": "/api/careers/apply",
+      "regex": "^/api/careers/apply(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/careers/apply(?:/)?$"
+    },
+    {
+      "page": "/api/careers/upload-url",
+      "regex": "^/api/careers/upload\\-url(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/careers/upload\\-url(?:/)?$"
+    },
+    {
+      "page": "/api/contact",
+      "regex": "^/api/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/contact(?:/)?$"
+    },
+    {
+      "page": "/careers",
+      "regex": "^/careers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/careers(?:/)?$"
+    },
+    {
+      "page": "/contact-us",
+      "regex": "^/contact\\-us(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact\\-us(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/projects",
+      "regex": "^/projects(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/projects(?:/)?$"
+    },
+    {
+      "page": "/robots.txt",
+      "regex": "^/robots\\.txt(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/robots\\.txt(?:/)?$"
+    },
+    {
+      "page": "/services",
+      "regex": "^/services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services(?:/)?$"
+    },
+    {
+      "page": "/sitemap.xml",
+      "regex": "^/sitemap\\.xml(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sitemap\\.xml(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

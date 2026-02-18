@@ -62,19 +62,20 @@ npm install
 npm run dev
 ```
 
-## Deploy to Cloudflare Pages
+## Deploy to Cloudflare (Workers + OpenNext)
+
+This project uses dynamic API routes, so deploy it as a **Worker** (not static Pages output).
 
 1. Push this repo to GitHub.
-2. Create a Cloudflare Pages project and connect the repo.
-3. Use build command: `npm run build`
-4. Use the **Next.js framework preset** in Pages (do not set a custom static output directory).
+2. In Cloudflare, create a Worker project connected to this repo (Workers Builds).
+3. Build command: `npm run cf:build`
+4. Deploy command (if required by your CI flow): `npm run cf:deploy`
 5. Add all required environment variables.
 6. Add custom domain `www.wavegroups.com`.
 
 Important:
-- Do **not** use `npx @cloudflare/next-on-pages@1` as the build command for this project.
-- `next-on-pages@1` is deprecated and does not support Next.js 16 prerender output.
-- If this command is currently configured in Pages, replace it with `npm run build`.
+- Do **not** use `npx @cloudflare/next-on-pages@1`. It is deprecated and breaks on Next.js 16+ output.
+- If you keep using a Pages project, you'll likely get 404/static-output mismatches for this app.
 
 If your Pages setup expects a Next.js preset, select **Next.js** framework preset.
 
